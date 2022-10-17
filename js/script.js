@@ -24,38 +24,55 @@ const playBtn = document.getElementById("play-btn");
 // OUTPUT ELEMENTS
 const grid = document.querySelector(".ms_main-container");
 
+
 // INPUT
 // 1 SE l'utente clicca sul pulsante play
 playBtn.addEventListener("click", function () {
-    console.log(playBtn);
-
-    // Pulizia del main conteiner
-    grid.innerHTML = "";
-    
     // ESECUZIONE
-    // 2 Si avvia un ciclo che 100 volte:
-    for (let i = 1; i <= 100; i++) {
-        //  2.1 Crea un elemento HTML con classe .ms_cell che contiene
-        //  2.2 Un Numero che corrisponde all'indice del ciclo
-        //  2.3 Un event listner per la colorazione in azzurro
-        //      2.3.1 SE l'utente clicca sulla casella
-        //      2.3.2 ALLORA viene aggiunta una classe all cella che colori ll background di azzurro
-        const cell = cellCreation(i);
+    // 2 Pulizia del main conteiner
+    clearGrid(grid);
 
-        // OUTPUT
-        grid.append(cell);
-        
-        //  2.4 Fine iterazione
-        console.log("iteration", i);
-    }
-})
-// 3 Fine ciclo
+    // 3 Creazione della griglia, il numero indica la quantità di celle
+    // OUTPUT
+    gridDraw(grid, 100);
+    console.log(playBtn);
+});
+
 
 // FUNCTIONS
 
-// function gridReset (){
-// 
-// }
+/**
+ * Description Crea una grignia di n° celle numerate e intrerattive
+ * @param {number} cellQuantity N° di celle
+ * @returns {object} griglia definitiva 
+ */
+function gridDraw (gridToDraw, cellQuantity) {
+   
+    // 3.1 Si avvia un ciclo che n volte:
+    for (let i = 1; i <= cellQuantity; i++) {
+        
+        // 3.2 Si crea la cella
+        const cell = cellCreation(i);
+        
+        // 3.3 Si aggiunge la cella alla griglia
+        gridToDraw.append(cell);
+        
+        //  3.4 Fine iterazione
+        console.log("iteration", i);
+    }
+
+    // 3.5 Viene ritornata la griglia completata
+    return gridToDraw;
+}
+
+/**
+ * Description Pulisce il contenuto di una griglia
+ * @param {oggetto} gridToClear Griglia da pulire
+  */
+function clearGrid (gridToClear) {
+//  // Pulizia del main conteiner
+gridToClear.innerHTML = "";
+}
 
 /**
  * Description Funzione che crea una nuova cella completa e numerata
@@ -64,11 +81,12 @@ playBtn.addEventListener("click", function () {
  */
 function cellCreation(cellNumber) {
     console.log(cellNumber);
-    //  2.1 Crea un elemento HTML con classe .ms_cell che contiene
+    //  2.3 Crea un elemento HTML con classe .ms_cell che contiene
     const newCell = document.createElement("div");
     newCell.classList.add("ms_cell");
-    //  2.2 Un Numero che corrisponde all'indice del ciclo
+    //  2.4 Un Numero che corrisponde all'indice del ciclo
     newCell.innerHTML = cellNumber;
+    //  2.5 Un event listner per la colorazione in azzurro
     newCell.addEventListener("click", cellIsTouched);
 
 
@@ -83,8 +101,4 @@ function cellCreation(cellNumber) {
 function cellIsTouched(cellTouched) {
     console.log(this.innerHTML);
     return this.classList.toggle("bg_cell-touched");    
-}
-
-function test() {
-    console.log("TEST");
 }
