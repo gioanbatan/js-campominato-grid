@@ -16,6 +16,12 @@ html {
     height: 100vh;
 }
 
+/* VARIABLES */
+:root {
+    --header-height: 5rem;
+    --footer-height: 3rem;
+}
+
 /* COMMON */
 .ms_container {
     width: 80%;
@@ -32,9 +38,12 @@ button {
 /* HEADER */
 header {
     display: flex;
-    background-color: #ffffff;
+
+    width: 100%;
+    height: var(--header-height);
     padding-top: 0.5rem;
     padding-bottom: 1rem;
+    background-color: #ffffff;
 }
 
 .ms_header-container {
@@ -53,7 +62,11 @@ header {
 main {
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    
+    width: 100%;
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+    
     padding: 2rem 0;
 }
 
@@ -63,11 +76,11 @@ main {
     align-items: flex-start;
     flex-wrap: wrap;
 
-    width: 80vw;
-    height: 80vw;
+    width: 500px;
+    height: 500px;
 
     /* DEBUG */
-    border: 2px dashed red;
+    /* border: 2px dashed red; */
 }
 
 .ms_cell {
@@ -75,6 +88,8 @@ main {
     justify-content: center;
     align-items: center;
 
+    /* width: 30px; */
+    /* height: 30px; */
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid #000000;
@@ -87,6 +102,7 @@ footer {
     left: 0;
 
     width: 100%;
+    height: var(--footer-height);
     padding: 1rem;
     background-color: #ffffff;
 }
