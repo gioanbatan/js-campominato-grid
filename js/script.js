@@ -18,17 +18,39 @@
 
 // DATI
 
+// INPUT ELEMENTS
+const playBtn = document.getElementById("play-btn");
+
+// OUTPUT ELEMENTS
+const grid = document.querySelector(".ms_main-container");
+
 // INPUT
 // 1 SE l'utente clicca sul pulsante play
+playBtn.addEventListener("click", function () {
+    console.log(playBtn);
+    // ESECUZIONE
+    // 2 Si avvia un ciclo che 100 volte:
+    for (let i = 1; i <= 100; i++) {
+        //  2.1 Crea un elemento HTML con classe .ms_cell che contiene
+        const cell = document.createElement("div");
+        cell.classList.add("ms_cell");
+        
+        //  2.2 Un Numero che corrisponde all'indice del ciclo
+        cell.innerHTML = i;
+        //  2.3 Un event listner per la colorazione in azzurro
+        //      2.3.1 SE l'utente clicca sulla casella
+        cell.addEventListener("click", function() {
+            //      2.3.2 ALLORA viene aggiunta una classe all cella che colori ll background di azzurro
+            cell.classList.toggle("bg_cell-touched")
+            console.log("clicked cell")
+        });
+        // OUTPUT
+        grid.append(cell);
 
-// ESECUZIONE
-// 2 Si avvia un ciclo che 100 volte:
-// OUTPUT
-//  2.1 Crea un elemento HTML con classe .ms_cell che contiene
-//  2.2 Crea un Numero che corrisponde all'indice del ciclo
-//  2.3 Crea un event listner per la colorazione in azzurro
-//      2.3.1 SE l'utente clicca sulla casella
-//      2.3.2 ALLORA viene aggiunta una classe all cella che colori ll background di azzurro
-//  2.4 Fine iterazione
+        //  2.4 Fine iterazione
+        console.log("iteration", i);
+    }
+})
 // 3 Fine ciclo
 
+// FUNCTIONS

@@ -18,15 +18,23 @@ html {
 
 /* VARIABLES */
 :root {
+    /* Dimensions */
     --header-height: 5rem;
     --footer-height: 3rem;
+
+    /* Colors */
+    --ms_cell-default: #ffffff;
+    --ms_cell-touched: #7799ff;
 }
+
+/* UTILITIES */
+
 
 /* COMMON */
 .ms_container {
     width: 80%;
     max-width: 1100px;
-
+    
     margin: 0 auto;
 }
 
@@ -35,10 +43,11 @@ button {
     padding: 0.1rem 1rem;
 }
 
+
 /* HEADER */
 header {
     display: flex;
-
+    
     width: 100%;
     height: var(--header-height);
     padding-top: 0.5rem;
@@ -75,10 +84,10 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-
+    
     width: 500px;
     height: 500px;
-
+    
     /* DEBUG */
     /* border: 2px dashed red; */
 }
@@ -87,13 +96,19 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     width: calc(100% / 10);
     height: calc(100% / 10);
-
-    background-color: #ffffff;
+    
+    background-color: var(--ms_cell-default);
     border: 1px solid #000000;
+
+    cursor: pointer;
 } 
+
+.bg_cell-touched {
+    background-color: var(--ms_cell-touched);
+}
 
 /* FOOTER */
 footer {
