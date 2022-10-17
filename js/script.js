@@ -16,4 +16,3 @@
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 // Buon lavoro! :muscolo:
 
-alert();
