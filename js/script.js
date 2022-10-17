@@ -53,9 +53,9 @@ playBtn.addEventListener("click", function () {
 
 // FUNCTIONS
 
-function gridReset {
-    
-}
+// function gridReset (){
+// 
+// }
 
 /**
  * Description Funzione che crea una nuova cella completa e numerata
