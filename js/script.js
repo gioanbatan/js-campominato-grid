@@ -71,6 +71,7 @@ function cellCreation(cellNumber) {
     newCell.innerHTML = cellNumber;
     newCell.addEventListener("click", cellIsTouched);
 
+
     return newCell;
 }
 
@@ -80,6 +81,7 @@ function cellCreation(cellNumber) {
  * @returns {object} cella cliccata con classe bg_cell-touched
  */
 function cellIsTouched(cellTouched) {
+    console.log(this.innerHTML);
     return this.classList.toggle("bg_cell-touched");    
 }
 
