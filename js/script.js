@@ -38,15 +38,13 @@ playBtn.addEventListener("click", function () {
         //  2.2 Un Numero che corrisponde all'indice del ciclo
         cell.innerHTML = i;
         //  2.3 Un event listner per la colorazione in azzurro
-        //      2.3.1 SE l'utente clicca sulla casella
-        cell.addEventListener("click", function() {
-            //      2.3.2 ALLORA viene aggiunta una classe all cella che colori ll background di azzurro
-            cell.classList.toggle("bg_cell-touched")
-            console.log("clicked cell")
-        });
+        // //      2.3.1 SE l'utente clicca sulla casella
+        // cell.addEventListener("click", function() {
+        //     //      2.3.2 ALLORA viene aggiunta una classe all cella che colori ll background di azzurro
+        cell.addEventListener("click", cellIsTouched);
         // OUTPUT
         grid.append(cell);
-
+        
         //  2.4 Fine iterazione
         console.log("iteration", i);
     }
@@ -54,3 +52,10 @@ playBtn.addEventListener("click", function () {
 // 3 Fine ciclo
 
 // FUNCTIONS
+function cellIsTouched(cellTouched) {
+    return this.classList.toggle("bg_cell-touched");    
+}
+
+function test() {
+    console.log("TEST");
+}
