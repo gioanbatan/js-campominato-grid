@@ -88,10 +88,10 @@ main {
     justify-content: center;
     align-items: center;
 
-    /* width: 30px; */
-    /* height: 30px; */
     width: calc(100% / 10);
     height: calc(100% / 10);
+
+    background-color: #ffffff;
     border: 1px solid #000000;
 } 
 

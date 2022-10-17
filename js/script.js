@@ -16,3 +16,19 @@
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 // Buon lavoro! :muscolo:
 
+// DATI
+
+// INPUT
+// 1 SE l'utente clicca sul pulsante play
+
+// ESECUZIONE
+// 2 Si avvia un ciclo che 100 volte:
+// OUTPUT
+//  2.1 Crea un elemento HTML con classe .ms_cell che contiene
+//  2.2 Crea un Numero che corrisponde all'indice del ciclo
+//  2.3 Crea un event listner per la colorazione in azzurro
+//      2.3.1 SE l'utente clicca sulla casella
+//      2.3.2 ALLORA viene aggiunta una classe all cella che colori ll background di azzurro
+//  2.4 Fine iterazione
+// 3 Fine ciclo
+
